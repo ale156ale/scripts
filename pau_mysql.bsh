@@ -1,0 +1,2 @@
+sudo mysql -uroot -p -e "use mysql; update user set authentication_string=PASSWORD('admin') where user
+='root';"

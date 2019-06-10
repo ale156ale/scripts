@@ -1,0 +1,14 @@
+#atualiza horário, necessário para atualizar firmware
+sudo ntpdate -u pool.ntp.br
+sudo hwclock -w
+#remove bibliotecas orfãs
+sudo deborphan | xargs sudo apt-get -y remove --purge
+#remove pacotes desnecessários
+sudo deborphan --guess-data | xargs sudo apt-get -y remove --purge 
+#atualiza SO
+sudo apt-get dist-upgrade -y
+sudo apt-get update ; sudo apt-get upgrade -y ; sudo apt-get autoclean -y
+#upgrade firmware raspberry
+sudo UPDATE_SELF=0 SKIP_WARNING=1 rpi-update 
+#limpa pacotes desnecessários
+sudo apt autoremove -y

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ $# -lt 1 ]; then
+    echo -e "use ./comp_descomp_projeto.bsh <parametro>\nOnde: <parametro> = compacta ou descompacta\n\n"
+    exit 1
+fi
+if [ "$1" == "compacta" ]; then
+    echo -e "compactando, aguarde ...\n"
+    tar -zcf $HOME/laravel-first-crud-app.tar $HOME/laravel-first-crud-app
+    
+    cp $HOME/laravel-first-crud-app.tar /mnt/d/Meus\ Documentos/OneDrive/Pessoal/_Laravel\ php\ framework/
+    
+    rm $HOME/laravel-first-crud-app.tar
+    cp -rv $HOME/scripts  /mnt/d/Meus\ Documentos/OneDrive/Pessoal/_Laravel\ php\ framework/
+fi
+if [ "$1" == "descompacta" ]; then
+    sudo rm -rf $HOME/laravel-first-crud-app
+    
+    cp /mnt/d/Meus\ Documentos/OneDrive/Pessoal/_Laravel\ php\ framework/laravel-first-crud-app.tar $HOME/
+    
+    tar -zxvf laravel-first-crud-app.tar -C /
+    
+fi
+
+
