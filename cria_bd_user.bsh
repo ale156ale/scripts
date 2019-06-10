@@ -1,0 +1,2 @@
+#!/bin/bash
+mysql -u root -p -e "create database teste; create user 'teste'@'localhost' identified by 'teste'; grant all on teste.* to 'teste'@'localhost';"

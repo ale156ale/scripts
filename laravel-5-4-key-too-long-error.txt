@@ -1,0 +1,155 @@
+https://laravel-news.com/laravel-5-4-key-too-long-error
+
+   #publisher Laravel News » Feed Laravel News Feed
+
+   [tr?id=1570328566617363&ev=PageView&noscript=1]
+
+   IFRAME: //www.googletagmanager.com/ns.html?id=GTM-K67T8R
+
+Laravel News
+
+   (BUTTON)
+   ____________________ (BUTTON)
+     * Blog
+     * Tutorials
+     * Packages
+     * Podcast
+     * Newsletter
+
+     *
+     *
+     *
+
+    1. Laravel Tutorials
+    2. Laravel Packages
+    3. Laravel Books
+    4. The Artisan Files
+    5. Laravel Applications
+    6. Laravel Homestead
+
+   [dark-ln-elephant.png]
+
+   Laravel 5.4: Specified key was too long error
+
+Laravel 5.4: Specified key was too long error
+
+   [0e7b6742f9d7e1a8a213d74b429b9e8f?s=130]
+   January 31, 2018 / Eric L. Barnes
+
+   Laravel 5.4 made a change to the default database character set, and it’s now utf8mb4 which includes support
+   for storing emojis. This only affects new applications and as long as you are running MySQL v5.7.7 and higher
+   you do not need to do anything.
+
+   For those running MariaDB or older versions of MySQL you may hit this error when trying to run migrations:
+
+     [Illuminate\Database\QueryException]
+     SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767
+     bytes (SQL: alter table users add unique users_email_unique(email))
+
+     [PDOException]
+     SQLSTATE[42000]: Syntax error or access violation: 1071 Specified key was too long; max key length is 767
+     bytes
+
+   As outlined in the Migrations guide to fix this all you have to do is edit your AppServiceProvider.php file and
+   inside the boot method set a default string length:
+use Illuminate\Support\Facades\Schema;
+
+public function boot()
+{
+    Illuminate\Support\Facades\Schema::defaultStringLength(191);
+}
+
+   After that everything should work as normal. If you enjoyed this post be sure and join the weekly Laravel
+   newsletter and never miss out on new releases, framework tips, and new tutorials.
+     __________________________________________________________________________________________________________
+
+   Filed in: Laravel 5.4 / MariaDB / MySQL
+     __________________________________________________________________________________________________________
+
+Enjoy this? Get Laravel News delivered straight to your inbox every Sunday.
+
+   No Spam, ever. We'll never share your email address and you can opt out at any time.
+   ____________________ (BUTTON) Subscribe
+
+Newsletter
+
+   [icon-newsletter.png]
+
+   Join the weekly newsletter and never miss out on new tips, tutorials, and more.
+   ____________________ (BUTTON) Subscribe
+   Laravel News Partners
+   Bugsnag LaraJobs Vue School Ring Central FnnlDb Honeybadger Ottomatik Tighten
+   Sponsor / Become a sponsor
+
+Laravel Jobs
+
+   [icon-chair.png]
+
+   Senior Software Engineer
+          Sydney, Australia
+          FoodByUs
+
+   Full Stack Engineer
+          Remote or Medford, Oregon
+          Empire Medical
+
+   Full-Stack Software Engineer
+          Remote within North America timezones
+          Shelterluv
+
+   Laravel Developer (fulltime - Dutch only)
+          Netherlands
+          Qbixx | Webservices
+
+   Full Stack or Back-End Developer
+          Alexandria, VA; Tallahassee, FL; Orlando, FL
+          Marketing for Change
+
+   Senior Quality Assurance Engineer
+          Remote
+          Bisnow Media
+
+   Senior PHP/Laravel Developer: Your Dream Work Environment
+          Remote
+          iPhone Photography School
+
+   [INS: :INS]
+
+   [INS: :INS]
+
+PhpStorm EAP adds support for Blade Components and Slots
+
+   JetBrains has just released PhpStorm 2017.1 EAP build (171.2613) and through the Laravel plugin, it now
+   supports the…
+
+Laravel 5.4 Is Now Released
+
+   Version 5.4 of Laravel is now officially released! This release has many new features, and improvements and
+   here is q…
+
+     *
+     *
+     *
+     *
+
+    1. Links
+    2. Newsletter
+    3. Advertise
+    4. Archive
+    5. Jobs
+    6. Your Account
+    7. Contact
+
+    1. News
+    2. Tutorials
+    3. Packages
+    4. Books
+    5. Interviews
+    6. Applications
+
+   [dark-ln-elephant.png]
+
+   © 2012 - 2019 Laravel News — By Eric L. Barnes - A division of dotdev inc.
+
+   Design & Front-end code by
+   [zaengle-logo.png]

@@ -1,0 +1,8 @@
+#!/bin/bash
+rsync -CravzpP $HOME/scripts/* /mnt/d/Meus\ Documentos/OneDrive/Pessoal/_Laravel\ php\ framework
+/scripts/
+rsync -CravzpP /mnt/d/Meus\ Documentos/OneDrive/Pessoal/_Laravel\ php\ framework/scripts/* $HOME/scripts/
+git add .
+git commit -m "outro"
+git push -f origin master
+
